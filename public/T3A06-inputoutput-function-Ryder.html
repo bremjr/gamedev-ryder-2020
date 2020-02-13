@@ -6,5 +6,11 @@
   document.getElementById('myDiv01').innerHTML = document.getElementById('myText01').value + ' ' + document.getElementById('myText02').value
 
 }"><br>
-Hello:
-<div id="myDiv01">...</div>
+<div id="myDiv01"></div><br>
+
+<input id="myText03" type=text placeholder="Favourite colour">
+<input type="button" value="Submit" onclick="{
+  document.getElementById('mySpan01').innerHTML = document.getElementById('myText03').value + ' ' 
+
+}"><br>
+wow my favourite colour is <span id="mySpan01"></span> too!
