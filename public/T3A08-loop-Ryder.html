@@ -1,0 +1,50 @@
+<h1 align=center>T3A08-loop-Ryder.html </h1>
+
+<input id="myText01" type=text value="20">
+
+<input type="button" value="Loop" onclick="{
+  document.getElementById('myDiv01').innerHTML =''
+
+   
+
+  for (let myX=0; myX <= document.getElementById('myText01').value; myX++){
+
+    document.getElementById('myDiv01').innerHTML += '<br>Loop #:' + myX
+
+
+    if (myX==5){
+      document.getElementById('myDiv01').innerHTML += ', It is a Five'
+
+    }
+
+  }
+
+}">
+
+<div id="myDiv01">...</div>
+
+
+
+
+
+
+
+
+
+<hr><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+  if (myX==4){
+    document.getElementById('myDiv01').innerHTML = '<br>It is a Four, input was: ' +document.getElementById('myText01').value}
+  if (myX==3){
+    document.getElementById('myDiv01').innerHTML = '<br>It is a Three, input was: ' +document.getElementById('myText01').value} 
+  if (myX==2){
+    document.getElementById('myDiv01').innerHTML = '<br>It is a Two, input was: ' +document.getElementById('myText01').value}
+  if (myX==1){
+    document.getElementById('myDiv01').innerHTML = '<br>It is a One, input was: ' +document.getElementById('myText01').value}
+  if (myX==0){
+    document.getElementById('myDiv01').innerHTML = '<br>It is a Zero, input was: ' +document.getElementById('myText01').value}
+  if (myX>5){
+    document.getElementById('myDiv01').innerHTML = '<br>It is greater than Five, input was: ' +document.getElementById('myText01').value}
+  if (myX<0){
+    document.getElementById('myDiv01').innerHTML = '<br>It is less than Zero, input was: ' +document.getElementById('myText01').value
