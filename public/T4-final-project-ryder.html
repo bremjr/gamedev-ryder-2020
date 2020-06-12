@@ -1,3 +1,5 @@
+
+
 <body id="myBody" onLoad="{
 
   clearInterval(myTimer02)
@@ -18,9 +20,18 @@ clearInterval(myTimer03)
      myCheckHit()     // checks for all collisions
   }, 50)
 
+clearInterval(myTimer04)
+  myTimer03 = setInterval(function(){
+     let my04x = Math.floor((Math.random() * 20) - 9) 
+     let my04y = Math.floor((Math.random() * 20) - 9) 
+     document.getElementById('myImg05').style.left = parseInt(document.getElementById('myImg05').style.left) + my04x + 'px'
+     document.getElementById('myImg05').style.top  = parseInt(document.getElementById('myImg05').style.top)  + my04y + 'px'
+     myCheckHit()     // checks for all collisions
+  }, 50)
+
 }"
 
-<h1 align=center><font color=Green>T4-final-project-ryder</font></h1>
+<h5 align=center> Dodge The Dinos! </h5>
 
 <script>
 
@@ -32,6 +43,7 @@ clearInterval(myTimer03)
    let myTimer01
    let myTimer02
    let myTimer03
+   let myTimer04
 
    // global functions here
 function myHitOther(my1,my2){
@@ -62,25 +74,29 @@ function myCheckHit(){
    }   
    
    if ( myHitOther('myImg01','myImg03') ){
-       //alert('you lose')
       document.getElementById('myImg01').style.left = '20px'
       document.all.myText01.value = 'You hit myImg03'  
       myScore -= 1
    }   
-   
-  // you LOSE refresh the page
+
+   if ( myHitOther('myImg01','myImg05') ){
+      document.getElementById('myImg01').style.left = '20px'
+      document.all.myText01.value = 'You hit myImg03'  
+      myScore -= 1
+   }
+
    if (myScore <= 0){
     document.all.myText01.value = 'You were stopped! Try again'  
     location.reload()
    }
 
-   // YOU WIN and go to next level!
+
 
    if ( myHitOther('myImg01','myImg04') ){
       document.all.myText01.value = 'You hit myImg04 and you win the game!'  
-       alert('You Win, now go to the next level')
+    
       document.getElementById('myImg01').style.left = '20px'
-      location = 'https://www.google.ca'
+      location = 'T4-final-project-level-2.html'
    }
 
   
@@ -95,7 +111,7 @@ function myCheckHit(){
 
 
 
-<body id="myBody" style="background-repeat:repeat;background-size:80%"background="myBackground01.jpg"  onkeydown="{
+<body id="myBody" style="background-repeat:repeat;background-size:80%"background="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX1846615.jpg"  onkeydown="{
    document.all.myText01.value = event.key
    if (event.key == 'w') {  // d = go up
      document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 + 'px'
@@ -136,8 +152,8 @@ function myCheckHit(){
 
 
 
-<img id="myImg01" src="player.png" title="myImg01" style="position:absolute; width:100px; height:120px; left: 50px; top:190px;">
-<img id="myImg02" src="myImgNew.jpg" title="myImg02" style="position:absolute; width:100px; height:80px; left:350px; top:190px;">
-<img id="myImg03" src="myImgNew.jpg" title="myImg03" style="position:absolute; width:100px; height:80px; left:500px; top:190px;">
-<img id="myImg04" src="lacrossenet.png" title="myImg04" style="position:absolute; width:300px; height:240px; left:1500px; top:300px;">
-
+<img id="myImg01" src="https://i.etsystatic.com/7276932/r/il/7c8cd1/1516367114/il_fullxfull.1516367114_nwmg.jpg" title="myImg01" style="position:absolute; width:80px; height:80px; left: 50px; top:190px;">
+<img id="myImg02" src="https://image.spreadshirtmedia.com/image-server/v1/mp/compositions/T1363A70MPA2789PT10X6Y38D1024277413FS1813/views/1,width=550,height=550,appearanceId=70,backgroundColor=FFFFFF,noPt=true,version=1563450725/lacrossaurus-lacrosse-stick-dinosaur-cross-team-iphone-x-case.jpg" title="myImg02" style="position:absolute; width:100px; height:80px; left:350px; top:190px;">
+<img id="myImg03" src="https://res.cloudinary.com/teepublic/image/private/s--v0yWGf66--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_191919,e_outline:48/co_191919,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1511604963/production/designs/2099885_1.jpg" title="myImg03" style="position:absolute; width:80px; height:80px; left:650px; top:400px;">
+<img id="myImg04" src="https://www.anthem-sports.com/media/catalog/product/a/6/a63-188-new.jpg" title="myImg04" style="position:absolute; width:300px; height:240px; left:850px; top:300px;">
+<img id="myImg05" src="https://www.drumhelleronline.com/images/stories/Pictures/April%202013/Badlands-Lacrosse-01.jpg" title="myImg05" style="position:absolute; width:80px; height:80px; left:300px; top:550px;">
